@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("premsai26/hellonode")
+        app = sudo docker.build("premsai26/hellonode")
     }
 
     stage('Test image') {
