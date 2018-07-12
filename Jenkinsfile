@@ -5,13 +5,14 @@ node {
         /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
+        sh 'sudo usermod -a -G docker $USER'
     }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = sudo docker.build("premsai26/hellonode")
+        app = docker.build("premsai26/hellonode")
     }
 
     stage('Test image') {
