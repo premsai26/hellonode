@@ -4,7 +4,9 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        checkout scm
+        //checkout scm
+        git branch: '$GIT_BRANCH', url: '$GIT_URL'
+
         
     }
 
