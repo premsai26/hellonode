@@ -13,8 +13,8 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
-        app = docker.build("$WORKSPACE:${env.BUILD_ID}")
+      app = docker.build("dynaflo/$REPONAME")
+        //app = docker.build("$WORKSPACE:${env.BUILD_ID}")
     }
 
     stage('Test image') {
